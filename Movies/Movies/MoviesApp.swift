@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct MoviesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MovieListScreen()
+            }
         }
+        .modelContainer(for: [Movie.self])
     }
 }
