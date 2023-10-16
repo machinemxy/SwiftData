@@ -2,17 +2,41 @@
 //  MovieListView.swift
 //  Movies
 //
-//  Created by Ma, Xueyuan | Cecil | LIPD on 2023/10/16.
+//  Created by Ma, Xueyuan on 2023/10/16.
 //
 
 import SwiftUI
+import SwiftData
 
 struct MovieListView: View {
+    @Environment(\.modelContext) private var context
+    let movies: [Movie]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(movies) { movie in
+                HStack {
+                    Text(movie.title)
+                    Spacer()
+                    Text(movie.year.description)
+                }
+            }.onDelete(perform: deleteMovie)
+        }
+    }
+
+    private func deleteMovie(indexSet: IndexSet) {
+        indexSet.forEach { index in
+            let movie = movies[index]
+            context.delete(movie)
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
 #Preview {
-    MovieListView()
+    MovieListView(movies: [])
 }

@@ -2,7 +2,7 @@
 //  MovieListScreen.swift
 //  Movies
 //
-//  Created by Ma, Xueyuan | Cecil | LIPD on 2023/10/13.
+//  Created by Ma, Xueyuan on 2023/10/13.
 //
 
 import SwiftUI
@@ -13,21 +13,19 @@ struct MovieListScreen: View {
     @State private var isAddMoviePresented = false
 
     var body: some View {
-        List(movies) { movie in
-            Text(movie.title)
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Add Movie") {
-                    isAddMoviePresented = true
+        MovieListView(movies: movies)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add Movie") {
+                        isAddMoviePresented = true
+                    }
                 }
             }
-        }
-        .sheet(isPresented: $isAddMoviePresented, content: {
-            NavigationStack {
-                AdMovieScreen()
-            }
-        })
+            .sheet(isPresented: $isAddMoviePresented, content: {
+                NavigationStack {
+                    AdMovieScreen()
+                }
+            })
     }
 }
 
