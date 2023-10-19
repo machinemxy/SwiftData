@@ -30,11 +30,6 @@ struct AdMovieScreen: View {
                 Button("Save") {
                     let movie = Movie(title: title, year: year ?? 0)
                     context.insert(movie)
-                    do {
-                        try context.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
                     dismiss()
                 }
                 .disabled(!isFormValid)

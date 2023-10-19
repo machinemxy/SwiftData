@@ -32,11 +32,6 @@ struct MovieListView: View {
         indexSet.forEach { index in
             let movie = movies[index]
             context.delete(movie)
-            do {
-                try context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
         }
     }
 }

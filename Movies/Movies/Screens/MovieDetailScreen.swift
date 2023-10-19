@@ -15,11 +15,26 @@ struct MovieDetailScreen: View {
 
     @State private var title = ""
     @State private var year: Int?
+    @State private var showReviewScreen = false
 
     var body: some View {
         Form {
             TextField("Title", text: $title)
-            TextField("year", value: $year, format: .number)
+            TextField("Year", value: $year, format: .number)
+
+            Section("Reviews") {
+                Button("Add Review") {
+                    showReviewScreen = true
+                }
+
+                if movie.reviews.isEmpty {
+                    ContentUnavailableView {
+                        Text("No Reviews")
+                    }
+                } else {
+                    ReviewListView(movie: movie)
+                }
+            }
         }.onAppear(perform: {
             title = movie.title
             year = movie.year
@@ -40,6 +55,11 @@ struct MovieDetailScreen: View {
             }
         }
         .navigationTitle("Movie Detail")
+        .sheet(isPresented: $showReviewScreen) {
+            NavigationStack {
+                AddReviewScreen(movie: movie)
+            }
+        }
     }
 
     private var isFormValid: Bool {
