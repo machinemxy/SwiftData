@@ -26,13 +26,18 @@ struct MovieListScreen: View {
 
             Section("Actors") {
                 ForEach(actors) { actor in
-                    Text(actor.name)
+                    NavigationLink(value: actor) {
+                        ActorCellView(actor: actor)
+                    }
                 }.onDelete(perform: deleteActor)
             }
         }
         .navigationDestination(for: Movie.self) { movie in
             MovieDetailScreen(movie: movie)
         }
+        .navigationDestination(for: Actor.self, destination: { actor in
+            ActorDetailScreen(actor: actor)
+        })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Add Movie") {

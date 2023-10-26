@@ -22,6 +22,7 @@
 		7FBCECB52AE10D2100E2A3EE /* ReviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCECB42AE10D2100E2A3EE /* ReviewListView.swift */; };
 		7FE01BB52AEA2E930007BD9B /* ActorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE01BB42AEA2E930007BD9B /* ActorSelectionView.swift */; };
 		7FE01BB72AEA3CD60007BD9B /* ActorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE01BB62AEA3CD50007BD9B /* ActorCellView.swift */; };
+		7FE01BB92AEA5CC50007BD9B /* ActorDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE01BB82AEA5CC50007BD9B /* ActorDetailScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		7FBCECB42AE10D2100E2A3EE /* ReviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListView.swift; sourceTree = "<group>"; };
 		7FE01BB42AEA2E930007BD9B /* ActorSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorSelectionView.swift; sourceTree = "<group>"; };
 		7FE01BB62AEA3CD50007BD9B /* ActorCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorCellView.swift; sourceTree = "<group>"; };
+		7FE01BB82AEA5CC50007BD9B /* ActorDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorDetailScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				7F69FAD42AD93DF600748A85 /* MovieListScreen.swift */,
 				7FAAF12B2ADE78FE00A39D1C /* MovieDetailScreen.swift */,
 				7FB5DD5C2ADF9FA9003A83C4 /* AddReviewScreen.swift */,
+				7FE01BB82AEA5CC50007BD9B /* ActorDetailScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				7F69FACC2AD8DF1300748A85 /* Movie.swift in Sources */,
 				7F379BFB2AE780FB00FE8421 /* Actor.swift in Sources */,
 				7FE01BB52AEA2E930007BD9B /* ActorSelectionView.swift in Sources */,
+				7FE01BB92AEA5CC50007BD9B /* ActorDetailScreen.swift in Sources */,
 				7FBCECB52AE10D2100E2A3EE /* ReviewListView.swift in Sources */,
 				7FAAF12C2ADE78FE00A39D1C /* MovieDetailScreen.swift in Sources */,
 				7F69FAD52AD93DF600748A85 /* MovieListScreen.swift in Sources */,
