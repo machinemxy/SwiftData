@@ -35,6 +35,18 @@ struct MovieDetailScreen: View {
                     ReviewListView(movie: movie)
                 }
             }
+
+            Section("Actors") {
+                if movie.actors.isEmpty {
+                    ContentUnavailableView {
+                        Text("No Actors Available")
+                    }
+                } else {
+                    ForEach(movie.actors) { actor in
+                        ActorCellView(actor: actor)
+                    }
+                }
+            }
         }.onAppear(perform: {
             title = movie.title
             year = movie.year

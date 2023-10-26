@@ -13,11 +13,16 @@ struct AdMovieScreen: View {
     @Environment(\.modelContext) private var context
     @State private var title = ""
     @State private var year: Int?
+    @State private var selectedActors: Set<Actor> = []
 
     var body: some View {
         Form {
             TextField("Title", text: $title)
             TextField("Year", value: $year, format: .number)
+            
+            Section("Select Actors") {
+                ActorSelectionView(selectedActors: $selectedActors)
+            }
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -28,7 +33,7 @@ struct AdMovieScreen: View {
             
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
-                    let movie = Movie(title: title, year: year ?? 0)
+                    let movie = Movie(title: title, year: year ?? 0, actors: Array(selectedActors))
                     context.insert(movie)
                     dismiss()
                 }
