@@ -8,13 +8,20 @@
 import SwiftUI
 import SwiftData
 
+fileprivate enum Sheet: String, Identifiable {
+    case addMovie
+    case addActor
+    case showFilter
+
+    var id: String { self.rawValue }
+}
+
 struct MovieListScreen: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \Movie.year, order: .reverse) private var movies: [Movie]
     @Query(sort: \Actor.name, order: .forward) private var actors: [Actor]
-    @State private var isAddMoviePresented = false
-    @State private var isAddActorPresented = false
     @State private var actorName = ""
+    @State private var activeSheet: Sheet?
 
     var body: some View {
         List {
@@ -41,34 +48,38 @@ struct MovieListScreen: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Add Movie") {
-                    isAddMoviePresented = true
+                    activeSheet = .addMovie
                 }
             }
 
             ToolbarItem(placement: .topBarLeading) {
                 Button("Add Actor") {
-                    isAddActorPresented = true
+                    activeSheet = .addActor
                 }
             }
         }
-        .sheet(isPresented: $isAddMoviePresented, content: {
-            NavigationStack {
-                AdMovieScreen()
-            }
-        })
-        .sheet(isPresented: $isAddActorPresented, content: {
-            VStack {
-                Text("Add Actor")
-                    .font(.largeTitle)
-
-                TextField("Actor name", text: $actorName)
-                    .textFieldStyle(.roundedBorder)
-                    .padding(.horizontal)
-
-                Button("Save") {
-                    saveActor()
+        .sheet(item: $activeSheet, content: { sheet in
+            switch sheet {
+            case .addMovie:
+                NavigationStack {
+                    AdMovieScreen()
                 }
-            }.presentationDetents([.fraction(0.4)])
+            case .addActor:
+                VStack {
+                    Text("Add Actor")
+                        .font(.largeTitle)
+
+                    TextField("Actor name", text: $actorName)
+                        .textFieldStyle(.roundedBorder)
+                        .padding(.horizontal)
+
+                    Button("Save") {
+                        saveActor()
+                    }
+                }.presentationDetents([.fraction(0.4)])
+            case .showFilter:
+                Text("Show Filter Screen")
+            }
         })
     }
 
@@ -76,7 +87,7 @@ struct MovieListScreen: View {
         let actor = Actor(name: actorName)
         context.insert(actor)
         actorName = ""
-        isAddActorPresented = false
+        activeSheet = nil
     }
 
     private func deleteMovie(indexSet: IndexSet) {
