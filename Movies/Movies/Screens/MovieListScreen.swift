@@ -22,12 +22,28 @@ struct MovieListScreen: View {
     @Query(sort: \Actor.name, order: .forward) private var actors: [Actor]
     @State private var actorName = ""
     @State private var activeSheet: Sheet?
+    @State private var filterOption: FilterOption = .none
+
+    private var filteredMovies: [Movie] {
+        switch filterOption {
+        case .title(let string):
+            return movies.filter { movie in
+                movie.title.lowercased().contains(string.lowercased())
+            }
+        case .none:
+            return movies
+        }
+    }
 
     var body: some View {
         List {
             Section("Movies") {
-                ForEach(movies) { movie in
-                    MovieView(movie: movie)
+                Button("Filter") {
+                    activeSheet = .showFilter
+                }
+
+                ForEach(filteredMovies) { movie in
+                    MovieCellView(movie: movie)
                 }.onDelete(perform: deleteMovie)
             }
 
@@ -78,7 +94,7 @@ struct MovieListScreen: View {
                     }
                 }.presentationDetents([.fraction(0.4)])
             case .showFilter:
-                Text("Show Filter Screen")
+                FilterSelectionScreen(filterOption: $filterOption)
             }
         })
     }
@@ -92,7 +108,7 @@ struct MovieListScreen: View {
 
     private func deleteMovie(indexSet: IndexSet) {
         indexSet.forEach { index in
-            let movie = movies[index]
+            let movie = filteredMovies[index]
             context.delete(movie)
         }
     }
