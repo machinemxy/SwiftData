@@ -13,6 +13,7 @@
 		7F7C1DB22B0B3DD700378146 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7C1DB12B0B3DD700378146 /* Preview Assets.xcassets */; };
 		7F7C1DBA2B0B3E6D00378146 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7C1DB92B0B3E6D00378146 /* Room.swift */; };
 		7FE08FFA2B1DA9C7000895B5 /* UIColorValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE08FF92B1DA9C7000895B5 /* UIColorValueTransformer.swift */; };
+		7FE08FFD2B1DAF45000895B5 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE08FFC2B1DAF45000895B5 /* ColorSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		7F7C1DB12B0B3DD700378146 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F7C1DB92B0B3E6D00378146 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		7FE08FF92B1DA9C7000895B5 /* UIColorValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorValueTransformer.swift; sourceTree = "<group>"; };
+		7FE08FFC2B1DAF45000895B5 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		7F7C1DA92B0B3DD500378146 /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
+				7FE08FFB2B1DAF35000895B5 /* Views */,
 				7FE08FF82B1DA9AA000895B5 /* Value Transformers */,
 				7F7C1DB82B0B3E5C00378146 /* Models */,
 				7F7C1DAA2B0B3DD500378146 /* RoomsApp.swift */,
@@ -87,6 +90,14 @@
 				7FE08FF92B1DA9C7000895B5 /* UIColorValueTransformer.swift */,
 			);
 			path = "Value Transformers";
+			sourceTree = "<group>";
+		};
+		7FE08FFB2B1DAF35000895B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7FE08FFC2B1DAF45000895B5 /* ColorSelectorView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F7C1DAD2B0B3DD500378146 /* ContentView.swift in Sources */,
+				7FE08FFD2B1DAF45000895B5 /* ColorSelectorView.swift in Sources */,
 				7FE08FFA2B1DA9C7000895B5 /* UIColorValueTransformer.swift in Sources */,
 				7F7C1DAB2B0B3DD500378146 /* RoomsApp.swift in Sources */,
 				7F7C1DBA2B0B3E6D00378146 /* Room.swift in Sources */,

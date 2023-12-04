@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var name = ""
+    @State private var color = Color.red
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextField("Name", text: $name)
+                .textFieldStyle(.roundedBorder)
+            ColorSelectorView(selection: $color)
+            Button(action: {
+
+            }, label: {
+                Text("Save")
+                    .frame(maxWidth: .infinity)
+            })
+            .buttonStyle(.borderedProminent)
+            Spacer()
         }
         .padding()
     }
