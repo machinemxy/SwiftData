@@ -11,7 +11,10 @@ import SwiftUI
 struct GardenGreensApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
         }
+        .modelContainer(for: [Vegetable.self])
     }
 }
