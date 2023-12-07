@@ -25,7 +25,11 @@ struct ContentView: View {
                 }
 
             List(vegetables) { vegetable in
-                Text(vegetable.name)
+                NavigationLink {
+                    NoteListScreen()
+                } label: {
+                    Text(vegetable.name)
+                }
             }
 
             Spacer()
