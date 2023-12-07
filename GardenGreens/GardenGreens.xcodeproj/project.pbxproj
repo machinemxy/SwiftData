@@ -14,6 +14,7 @@
 		7FFC10852B205FB600EF8034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC10842B205FB600EF8034 /* Assets.xcassets */; };
 		7FFC10882B205FB600EF8034 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFC10872B205FB600EF8034 /* Preview Assets.xcassets */; };
 		7FFC10902B20600A00EF8034 /* Vegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFC108F2B20600A00EF8034 /* Vegetable.swift */; };
+		8EC385F12B21EE720031C2E1 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC385F02B21EE720031C2E1 /* PreviewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		7FFC10842B205FB600EF8034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FFC10872B205FB600EF8034 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7FFC108F2B20600A00EF8034 /* Vegetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vegetable.swift; sourceTree = "<group>"; };
+		8EC385F02B21EE720031C2E1 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFC10872B205FB600EF8034 /* Preview Assets.xcassets */,
+				8EC385F02B21EE720031C2E1 /* PreviewContainer.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC385F12B21EE720031C2E1 /* PreviewContainer.swift in Sources */,
 				7F7B15EA2B21D1B70032815C /* NoteListScreen.swift in Sources */,
 				7FFC10832B205FB500EF8034 /* ContentView.swift in Sources */,
 				7FFC10902B20600A00EF8034 /* Vegetable.swift in Sources */,

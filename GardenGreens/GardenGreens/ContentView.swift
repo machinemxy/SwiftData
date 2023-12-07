@@ -26,7 +26,7 @@ struct ContentView: View {
 
             List(vegetables) { vegetable in
                 NavigationLink {
-                    NoteListScreen()
+                    NoteListScreen(vegetable: vegetable)
                 } label: {
                     Text(vegetable.name)
                 }
@@ -39,9 +39,9 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+#Preview { @MainActor in
     NavigationStack {
         ContentView()
-            .modelContainer(for: [Vegetable.self], inMemory: true)
+            .modelContainer(previewContainer)
     }
 }
