@@ -25,7 +25,7 @@ struct NoteListScreen: View {
                     text = ""
                 }
             
-            List(vegetable.notes) { note in
+            List(vegetable.notes ?? []) { note in
                 Text(note.text)
             }
 

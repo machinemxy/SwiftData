@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 class Note {
-    var text: String
+    var text: String = ""
     var vegetable: Vegetable?
 
     init(text: String) {
