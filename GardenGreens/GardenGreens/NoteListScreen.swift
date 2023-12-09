@@ -10,8 +10,15 @@ import SwiftData
 
 struct NoteListScreen: View {
     @Environment(\.modelContext) private var context
+    @Query private var notes: [Note]
     let vegetable: Vegetable
     @State private var text = ""
+    
+    private var filteredNotes: [Note] {
+        notes.filter { note in
+            note.vegetable == vegetable
+        }
+    }
 
     var body: some View {
         VStack {
@@ -25,7 +32,7 @@ struct NoteListScreen: View {
                     text = ""
                 }
             
-            List(vegetable.notes ?? []) { note in
+            List(filteredNotes) { note in
                 Text(note.text)
             }
 
