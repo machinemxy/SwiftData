@@ -23,7 +23,19 @@
 		8D828BC22AC8DF9B00CF6BC0 /* BudgetListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D828BC12AC8DF9B00CF6BC0 /* BudgetListScreen.swift */; };
 		8D828BC42AC8E4B400CF6BC0 /* AddBudgetCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D828BC32AC8E4B400CF6BC0 /* AddBudgetCategoryScreen.swift */; };
 		8DDF68C42ACA502000214018 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDF68C32ACA502000214018 /* Transaction.swift */; };
+		8EDC63742B4110D000573694 /* SpendSmartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC63732B4110D000573694 /* SpendSmartTests.swift */; };
+		8EDC637B2B41141200573694 /* MockContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDC637A2B41141200573694 /* MockContainer.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EDC63752B4110D000573694 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D828BA42AC8DB3D00CF6BC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D828BAB2AC8DB3D00CF6BC0;
+			remoteInfo = SpendSmart;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8D0B04372AC9C044007F0C8E /* MessageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageWrapper.swift; sourceTree = "<group>"; };
@@ -43,10 +55,20 @@
 		8D828BC12AC8DF9B00CF6BC0 /* BudgetListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListScreen.swift; sourceTree = "<group>"; };
 		8D828BC32AC8E4B400CF6BC0 /* AddBudgetCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryScreen.swift; sourceTree = "<group>"; };
 		8DDF68C32ACA502000214018 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		8EDC63712B4110D000573694 /* SpendSmartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendSmartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EDC63732B4110D000573694 /* SpendSmartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendSmartTests.swift; sourceTree = "<group>"; };
+		8EDC637A2B41141200573694 /* MockContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8D828BA92AC8DB3D00CF6BC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDC636E2B4110D000573694 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				8D828BAE2AC8DB3D00CF6BC0 /* SpendSmart */,
+				8EDC63722B4110D000573694 /* SpendSmartTests */,
 				8D828BAD2AC8DB3D00CF6BC0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				8D828BAC2AC8DB3D00CF6BC0 /* SpendSmart.app */,
+				8EDC63712B4110D000573694 /* SpendSmartTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +183,15 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		8EDC63722B4110D000573694 /* SpendSmartTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EDC63732B4110D000573694 /* SpendSmartTests.swift */,
+				8EDC637A2B41141200573694 /* MockContainer.swift */,
+			);
+			path = SpendSmartTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +212,24 @@
 			productReference = 8D828BAC2AC8DB3D00CF6BC0 /* SpendSmart.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8EDC63702B4110D000573694 /* SpendSmartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EDC63792B4110D000573694 /* Build configuration list for PBXNativeTarget "SpendSmartTests" */;
+			buildPhases = (
+				8EDC636D2B4110D000573694 /* Sources */,
+				8EDC636E2B4110D000573694 /* Frameworks */,
+				8EDC636F2B4110D000573694 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EDC63762B4110D000573694 /* PBXTargetDependency */,
+			);
+			name = SpendSmartTests;
+			productName = SpendSmartTests;
+			productReference = 8EDC63712B4110D000573694 /* SpendSmartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,11 +237,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					8D828BAB2AC8DB3D00CF6BC0 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					8EDC63702B4110D000573694 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 8D828BAB2AC8DB3D00CF6BC0;
 					};
 				};
 			};
@@ -208,6 +263,7 @@
 			projectRoot = "";
 			targets = (
 				8D828BAB2AC8DB3D00CF6BC0 /* SpendSmart */,
+				8EDC63702B4110D000573694 /* SpendSmartTests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +275,13 @@
 			files = (
 				8D828BB72AC8DB3F00CF6BC0 /* Preview Assets.xcassets in Resources */,
 				8D828BB42AC8DB3F00CF6BC0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EDC636F2B4110D000573694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +309,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EDC636D2B4110D000573694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EDC63742B4110D000573694 /* SpendSmartTests.swift in Sources */,
+				8EDC637B2B41141200573694 /* MockContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EDC63762B4110D000573694 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D828BAB2AC8DB3D00CF6BC0 /* SpendSmart */;
+			targetProxy = 8EDC63752B4110D000573694 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8D828BB82AC8DB3F00CF6BC0 /* Debug */ = {
@@ -426,6 +506,44 @@
 			};
 			name = Release;
 		};
+		8EDC63772B4110D000573694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EQC88F8HW8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxy.SpendSmartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpendSmart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpendSmart";
+			};
+			name = Debug;
+		};
+		8EDC63782B4110D000573694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EQC88F8HW8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mxy.SpendSmartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpendSmart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpendSmart";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -443,6 +561,15 @@
 			buildConfigurations = (
 				8D828BBB2AC8DB3F00CF6BC0 /* Debug */,
 				8D828BBC2AC8DB3F00CF6BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EDC63792B4110D000573694 /* Build configuration list for PBXNativeTarget "SpendSmartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EDC63772B4110D000573694 /* Debug */,
+				8EDC63782B4110D000573694 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
