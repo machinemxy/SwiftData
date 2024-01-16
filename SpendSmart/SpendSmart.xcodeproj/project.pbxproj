@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FB2E1142B56610D002B8F72 /* BudgetListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2E1132B56610D002B8F72 /* BudgetListScreen.swift */; };
+		7FB2E1162B5663F0002B8F72 /* AddBudgetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2E1152B5663F0002B8F72 /* AddBudgetScreen.swift */; };
+		7FB2E1182B566BB2002B8F72 /* BudgetDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2E1172B566BB2002B8F72 /* BudgetDetailScreen.swift */; };
 		8D0B04382AC9C044007F0C8E /* MessageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B04372AC9C044007F0C8E /* MessageWrapper.swift */; };
 		8D0B043B2AC9C0A4007F0C8E /* ShowMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B043A2AC9C0A4007F0C8E /* ShowMessage.swift */; };
 		8D0B043D2AC9C0CA007F0C8E /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B043C2AC9C0CA007F0C8E /* View+Extensions.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7FB2E1132B56610D002B8F72 /* BudgetListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListScreen.swift; sourceTree = "<group>"; };
+		7FB2E1152B5663F0002B8F72 /* AddBudgetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetScreen.swift; sourceTree = "<group>"; };
+		7FB2E1172B566BB2002B8F72 /* BudgetDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailScreen.swift; sourceTree = "<group>"; };
 		8D0B04372AC9C044007F0C8E /* MessageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageWrapper.swift; sourceTree = "<group>"; };
 		8D0B043A2AC9C0A4007F0C8E /* ShowMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMessage.swift; sourceTree = "<group>"; };
 		8D0B043C2AC9C0CA007F0C8E /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
@@ -95,6 +101,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7FB2E1122B5660F6002B8F72 /* Page Objects */ = {
+			isa = PBXGroup;
+			children = (
+				7FB2E1132B56610D002B8F72 /* BudgetListScreen.swift */,
+				7FB2E1152B5663F0002B8F72 /* AddBudgetScreen.swift */,
+				7FB2E1172B566BB2002B8F72 /* BudgetDetailScreen.swift */,
+			);
+			path = "Page Objects";
+			sourceTree = "<group>";
+		};
 		8D0B04362AC9C033007F0C8E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +221,7 @@
 		8E0C9C372B41614000739150 /* SpendSmartUITests */ = {
 			isa = PBXGroup;
 			children = (
+				7FB2E1122B5660F6002B8F72 /* Page Objects */,
 				8E0C9C382B41614000739150 /* SpendSmartUITests.swift */,
 			);
 			path = SpendSmartUITests;
@@ -370,6 +387,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB2E1162B5663F0002B8F72 /* AddBudgetScreen.swift in Sources */,
+				7FB2E1182B566BB2002B8F72 /* BudgetDetailScreen.swift in Sources */,
+				7FB2E1142B56610D002B8F72 /* BudgetListScreen.swift in Sources */,
 				8E0C9C392B41614000739150 /* SpendSmartUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
