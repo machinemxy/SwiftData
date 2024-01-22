@@ -9,8 +9,13 @@ import Foundation
 import UIKit
 import SwiftData
 
+protocol AddTodoItemControllerDelegate {
+    func saveTodoItem(controller: UIViewController, todoItem: TodoItem)
+}
+
 class AddTodoItemController: UIViewController {
-    
+    var delegate: AddTodoItemControllerDelegate?
+
     lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -39,9 +44,8 @@ class AddTodoItemController: UIViewController {
         view.addSubview(stackView)
         
         saveButton.addAction(UIAction(handler: { [weak self] action in
-            
-           
-            
+            guard let self, let title = titleTextField.text else { return }
+            delegate?.saveTodoItem(controller: self, todoItem: TodoItem(title: title))
         }), for: .touchUpInside)
         
         titleTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
