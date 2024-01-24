@@ -29,14 +29,16 @@ struct ContentView: View {
                 switch result {
                     case .success(let data):
                         if let imageData = data {
-                           print(imageData)
+                            saveFurniture(with: imageData)
+                            selection = PhotoSelection()
                         }
                     case .failure(let error):
                         print("Error loading photo item: \(error.localizedDescription)")
                 }
             }
         } else if let img = selection.image, let imageData = img.pngData() {
-               print(imageData)
+            saveFurniture(with: imageData)
+            selection = PhotoSelection()
         }
     }
     
@@ -68,8 +70,22 @@ struct ContentView: View {
         .navigationTitle("SwiftData Storing Images")
         .navigationBarTitleDisplayMode(.inline)
     }
+
+    private func saveFurniture(with imageData: Data) {
+        guard let uiImage = UIImage(data: imageData) else {
+            return
+        }
+        let resizedImage = uiImage.resizeTo(to: CGSize(width: 200, height: 200))
+        guard let resizedImageData = resizedImage.pngData() else {
+            return
+        }
+        let furniture = Furniture(photo: resizedImageData)
+        context.insert(furniture)
+    }
 }
 
 #Preview {
-    ContentView()
+    NavigationStack {
+        ContentView()
+    }.modelContainer(for: Furniture.self, inMemory: true)
 }

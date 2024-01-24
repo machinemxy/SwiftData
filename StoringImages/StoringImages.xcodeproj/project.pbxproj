@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F6F974D2B60F17D003CFFD9 /* Furniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6F974C2B60F17D003CFFD9 /* Furniture.swift */; };
 		8DF81AE82B17D8F900C96B11 /* StoringImagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF81AE72B17D8F900C96B11 /* StoringImagesApp.swift */; };
 		8DF81AEA2B17D8F900C96B11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF81AE92B17D8F900C96B11 /* ContentView.swift */; };
 		8DF81AEC2B17D8FA00C96B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF81AEB2B17D8FA00C96B11 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F6F974C2B60F17D003CFFD9 /* Furniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furniture.swift; sourceTree = "<group>"; };
 		8DF81AE42B17D8F900C96B11 /* StoringImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoringImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF81AE72B17D8F900C96B11 /* StoringImagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringImagesApp.swift; sourceTree = "<group>"; };
 		8DF81AE92B17D8F900C96B11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F6F974B2B60F170003CFFD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7F6F974C2B60F17D003CFFD9 /* Furniture.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8DF81ADB2B17D8F900C96B11 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +65,7 @@
 		8DF81AE62B17D8F900C96B11 /* StoringImages */ = {
 			isa = PBXGroup;
 			children = (
+				7F6F974B2B60F170003CFFD9 /* Models */,
 				8DF81AE72B17D8F900C96B11 /* StoringImagesApp.swift */,
 				8DF81AE92B17D8F900C96B11 /* ContentView.swift */,
 				8DF81AEB2B17D8FA00C96B11 /* Assets.xcassets */,
@@ -145,6 +156,7 @@
 			files = (
 				8DF81AF62B17D90400C96B11 /* ImagePicker.swift in Sources */,
 				8DF81AEA2B17D8F900C96B11 /* ContentView.swift in Sources */,
+				7F6F974D2B60F17D003CFFD9 /* Furniture.swift in Sources */,
 				8DF81AE82B17D8F900C96B11 /* StoringImagesApp.swift in Sources */,
 				8DF81AF82B1807E500C96B11 /* UIImage+Extensions.swift in Sources */,
 			);
