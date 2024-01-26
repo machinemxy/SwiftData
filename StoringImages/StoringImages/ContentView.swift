@@ -19,9 +19,15 @@ struct ContentView: View {
     
     @State private var isCameraSelected: Bool = false
     @Environment(\.modelContext) private var context
-    
     @State private var selection: PhotoSelection = PhotoSelection()
-    
+    @Query private var furnitures: [Furniture]
+
+    let columns: [GridItem] = [
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10)
+    ]
+
     private func handleSelectedPhotoItem() {
         
         if let selectedPhotoItem = selection.photoItem {
@@ -45,7 +51,17 @@ struct ContentView: View {
     var body: some View {
         
         VStack {
-            
+            LazyVGrid(columns: columns, content: {
+                ForEach(furnitures) { furniture in
+                    if let furniturePhoto = furniture.photo, 
+                       let img = UIImage(data: furniturePhoto) {
+                        Image(uiImage: img)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
+            })
+
             Spacer()
             HStack {
                 
